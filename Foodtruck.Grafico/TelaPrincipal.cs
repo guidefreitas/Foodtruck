@@ -120,7 +120,7 @@ namespace Foodtruck.Grafico
 
         private void bebidasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TelaListaBebidas tela = new TelaListaBebidas();
+            ManterBebidas tela = new ManterBebidas();
             tela.MdiParent = this;
             tela.Show();
         }
