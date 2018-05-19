@@ -58,6 +58,12 @@
     <Compile Include="AdicionaPedido.Designer.cs">
       <DependentUpon>AdicionaPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaListaBebidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaListaBebidas.Designer.cs">
+      <DependentUpon>TelaListaBebidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManterCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TelaListaBebidas.resx">
+      <DependentUpon>TelaListaBebidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaListaClientes.resx">
       <DependentUpon>TelaListaClientes.cs</DependentUpon>
     </EmbeddedResource>
