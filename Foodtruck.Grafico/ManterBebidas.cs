@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Foodtruck.Negocio;
+using Foodtruck.Negocio.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,73 @@ namespace Foodtruck.Grafico
 {
     public partial class ManterBebidas : Form
     {
+        public Bebida bebidaSelecionada { get; set; }
         public ManterBebidas()
         {
-            InitializeComponent();
+        InitializeComponent();
         }
+
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            Bebida bebida = new Bebida();
+            if (Int64.TryParse(tbId.Text, out long longConvertido))
+            {
+                bebida.Id = longConvertido;
+            }
+            else
+            {
+                bebida.Id = -1;
+                //passa indentificador com valor negativo se não conseguir converter
+            }
+            if(float.TryParse(tbTamanho.Text, out float floatConvertido))
+            {
+                bebida.Tamanho = floatConvertido;
+            }
+            else
+            {
+                bebida.Tamanho = -1;
+            }
+            if(decimal.TryParse(tbValor.Text, out decimal decimalConvertido))
+            {
+                bebida.Valor = decimalConvertido;
+            }
+            else
+            {
+                bebida.Tamanho = -1;
+            }
+            bebida.Nome = tbNome.Text;
+            Validacao validacao;
+            if (bebidaSelecionada == null)
+            {
+                validacao = Program.Gerenciador.CadastraBebida(bebida);
+            }
+            else
+            {
+                  validacao = Program.Gerenciador.AlterarBebida(bebida);
+               
+            }
+
+
+
+            if (!validacao.Valido)
+            {
+                String mensagemValidacao = "";
+                foreach (var chave in validacao.Mensagens.Keys)
+                {
+                    String msg = validacao.Mensagens[chave];
+                    mensagemValidacao += msg;
+                    mensagemValidacao += Environment.NewLine;
+                }
+                MessageBox.Show(mensagemValidacao);
+            }
+            else
+            {
+                MessageBox.Show("Bebida salva com sucesso");
+            }
+
+            this.Close();
+        }
+
     }
 }
+

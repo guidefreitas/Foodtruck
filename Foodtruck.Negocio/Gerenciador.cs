@@ -79,9 +79,16 @@ namespace Foodtruck.Negocio
             return validacao;
         }
 
+        public Validacao AlterarBebida(Bebida bebidaCadastrada)
+        {
+            //Fazer essa Classe
+            Validacao teste = new Validacao();
+            return teste;
+        }
         public Validacao CadastraBebida(Bebida bebidaCadastrada)
         {
             Validacao validacao = new Validacao();
+
 
             if(this.banco.Bebidas.Where(x => x.Id == bebidaCadastrada.Id).Any())
             {
