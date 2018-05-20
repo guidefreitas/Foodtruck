@@ -70,8 +70,9 @@
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
             this.btSalvar.TabIndex = 1;
-            this.btSalvar.Text = "button1";
+            this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btCancelar
             // 
