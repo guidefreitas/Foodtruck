@@ -79,11 +79,15 @@ namespace Foodtruck.Negocio
             return validacao;
         }
 
-        public Validacao AlterarBebida(Bebida bebidaCadastrada)
+        public Validacao AlterarBebida(Bebida bebidaAlterada)
         {
-            //Fazer essa Classe
-            Validacao teste = new Validacao();
-            return teste;
+            Validacao validacao = new Validacao();
+            Bebida bebidaBanco = BuscaBebidaPorId(bebidaAlterada.Id);
+            bebidaBanco.Nome = bebidaAlterada.Nome;
+            bebidaBanco.Tamanho = bebidaAlterada.Tamanho;
+            bebidaBanco.Valor = bebidaAlterada.Valor;
+            this.banco.SaveChanges();
+            return validacao;
         }
         public Validacao CadastraBebida(Bebida bebidaCadastrada)
         {
@@ -188,6 +192,10 @@ namespace Foodtruck.Negocio
         public Cliente BuscaClientePorId(long id)
         {
             return this.banco.Clientes.Where(c => c.Id == id).FirstOrDefault();
+        }
+        public Bebida BuscaBebidaPorId(long id)
+        {
+            return this.banco.Bebidas.Where(b => b.Id == id).FirstOrDefault();
         }
 
         public List<Cliente> TodosOsClientes()

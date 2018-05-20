@@ -14,7 +14,8 @@ namespace Foodtruck.Grafico
 {
     public partial class ManterBebidas : Form
     {
-        public Bebida bebidaSelecionada { get; set; }
+        public Bebida BebidaSelecionada { get; set; }
+
         public ManterBebidas()
         {
         InitializeComponent();
@@ -50,7 +51,7 @@ namespace Foodtruck.Grafico
             }
             bebida.Nome = tbNome.Text;
             Validacao validacao;
-            if (bebidaSelecionada == null)
+            if (BebidaSelecionada == null)
             {
                 validacao = Program.Gerenciador.CadastraBebida(bebida);
             }
