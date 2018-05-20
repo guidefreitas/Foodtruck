@@ -64,6 +64,12 @@
     <Compile Include="TelaListaBebidas.Designer.cs">
       <DependentUpon>TelaListaBebidas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManterBebidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManterBebidas.Designer.cs">
+      <DependentUpon>ManterBebidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManterCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,18 @@
     </Compile>
     <Compile Include="TelaListaClientes.Designer.cs">
       <DependentUpon>TelaListaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManterLanches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManterLanches.Designer.cs">
+      <DependentUpon>ManterLanches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaListaLanches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaListaLanches.Designer.cs">
+      <DependentUpon>TelaListaLanches.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
@@ -102,8 +120,17 @@
     <EmbeddedResource Include="TelaListaBebidas.resx">
       <DependentUpon>TelaListaBebidas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManterBebidas.resx">
+      <DependentUpon>ManterBebidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaListaClientes.resx">
       <DependentUpon>TelaListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManterLanches.resx">
+      <DependentUpon>ManterLanches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaListaLanches.resx">
+      <DependentUpon>TelaListaLanches.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>

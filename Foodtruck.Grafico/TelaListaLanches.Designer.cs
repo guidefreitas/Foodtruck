@@ -1,6 +1,6 @@
 ﻿namespace Foodtruck.Grafico
 {
-    partial class TelaListaBebidas
+    partial class TelaListaLanches
     {
         /// <summary>
         /// Required designer variable.
@@ -35,35 +35,35 @@
             // 
             // btAlterar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(203, 26);
+            this.btAlterar.Location = new System.Drawing.Point(246, 44);
             this.btAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.btAlterar.Name = "btAlterar";
             this.btAlterar.Size = new System.Drawing.Size(72, 34);
-            this.btAlterar.TabIndex = 5;
+            this.btAlterar.TabIndex = 8;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
             // 
             // btRemover
             // 
-            this.btRemover.Location = new System.Drawing.Point(116, 26);
+            this.btRemover.Location = new System.Drawing.Point(159, 44);
             this.btRemover.Margin = new System.Windows.Forms.Padding(2);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(84, 34);
-            this.btRemover.TabIndex = 4;
+            this.btRemover.TabIndex = 7;
             this.btRemover.Text = "Remover";
             this.btRemover.UseVisualStyleBackColor = true;
             // 
             // btAdicionar
             // 
-            this.btAdicionar.Location = new System.Drawing.Point(32, 26);
+            this.btAdicionar.Location = new System.Drawing.Point(75, 44);
             this.btAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.btAdicionar.Name = "btAdicionar";
             this.btAdicionar.Size = new System.Drawing.Size(80, 34);
-            this.btAdicionar.TabIndex = 3;
+            this.btAdicionar.TabIndex = 6;
             this.btAdicionar.Text = "Adicionar";
             this.btAdicionar.UseVisualStyleBackColor = true;
             // 
-            // TelaListaBebidas
+            // TelaListaLanches
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -72,8 +72,8 @@
             this.Controls.Add(this.btRemover);
             this.Controls.Add(this.btAdicionar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "TelaListaBebidas";
-            this.Text = "TelaListaBebidas";
+            this.Name = "TelaListaLanches";
+            this.Text = "TelaListaLanches";
             this.ResumeLayout(false);
 
         }
