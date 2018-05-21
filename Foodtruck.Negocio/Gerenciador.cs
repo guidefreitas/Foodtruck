@@ -23,12 +23,43 @@ namespace Foodtruck.Negocio
 
         public Validacao AlterarCliente(Cliente clienteAlterado)
         {
+
             Validacao validacao = new Validacao();
             Cliente clienteBanco = BuscaClientePorId(clienteAlterado.Id);
-            clienteBanco.Nome = clienteAlterado.Nome;
-            clienteBanco.Email = clienteAlterado.Email;
-            clienteBanco.CPF = clienteAlterado.CPF;
-            this.banco.SaveChanges();
+            
+            if (clienteAlterado.Id < 0)
+            {
+                validacao.Mensagens.Add("Id", "O indenfiticador deve constituir apenas números positivos");
+            }
+            //verifica se já tem alguma mensagem de erro e se tiver pula essa verificação
+            
+
+            if (String.IsNullOrEmpty(clienteAlterado.CPF))
+            {
+                validacao.Mensagens.Add("CPF", "O campo CPF não pode ser nulo ou vazio");
+            }
+            if (String.IsNullOrEmpty(clienteAlterado.Nome))
+            {
+                validacao.Mensagens.Add("Nome", "O nome não pode ser nulo ou vazio");
+            }
+
+            if (String.IsNullOrEmpty(clienteAlterado.Email))
+            {
+                validacao.Mensagens.Add("Email", "O email não pode ser nulo ou vazio");
+            }
+
+            if (!clienteAlterado.Email.Contains("@") && validacao.Mensagens.Count == 0)
+            {
+                validacao.Mensagens.Add("Email", "Email no formato inválido");
+            }
+
+            if (validacao.Valido)
+            {
+                clienteBanco.Nome = clienteAlterado.Nome;
+                clienteBanco.Email = clienteAlterado.Email;
+                clienteBanco.CPF = clienteAlterado.CPF;
+                this.banco.SaveChanges();
+            }
             return validacao;
         }
 
@@ -79,9 +110,20 @@ namespace Foodtruck.Negocio
             return validacao;
         }
 
+        public Validacao AlterarBebida(Bebida bebidaAlterada)
+        {
+            Validacao validacao = new Validacao();
+            Bebida bebidaBanco = BuscaBebidaPorId(bebidaAlterada.Id);
+            bebidaBanco.Nome = bebidaAlterada.Nome;
+            bebidaBanco.Tamanho = bebidaAlterada.Tamanho;
+            bebidaBanco.Valor = bebidaAlterada.Valor;
+            this.banco.SaveChanges();
+            return validacao;
+        }
         public Validacao CadastraBebida(Bebida bebidaCadastrada)
         {
             Validacao validacao = new Validacao();
+
 
             if(this.banco.Bebidas.Where(x => x.Id == bebidaCadastrada.Id).Any())
             {
@@ -181,6 +223,10 @@ namespace Foodtruck.Negocio
         public Cliente BuscaClientePorId(long id)
         {
             return this.banco.Clientes.Where(c => c.Id == id).FirstOrDefault();
+        }
+        public Bebida BuscaBebidaPorId(long id)
+        {
+            return this.banco.Bebidas.Where(b => b.Id == id).FirstOrDefault();
         }
 
         public List<Cliente> TodosOsClientes()
