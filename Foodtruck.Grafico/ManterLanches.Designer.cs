@@ -33,6 +33,9 @@
             this.tbValor = new System.Windows.Forms.TextBox();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.tbId = new System.Windows.Forms.TextBox();
+            this.Codigo = new System.Windows.Forms.Label();
+            this.Nome = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btCancelar
@@ -74,11 +77,41 @@
             this.tbId.Size = new System.Drawing.Size(100, 20);
             this.tbId.TabIndex = 5;
             // 
+            // Codigo
+            // 
+            this.Codigo.AutoSize = true;
+            this.Codigo.Location = new System.Drawing.Point(44, 109);
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Size = new System.Drawing.Size(43, 13);
+            this.Codigo.TabIndex = 8;
+            this.Codigo.Text = "Codigo:";
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSize = true;
+            this.Nome.Location = new System.Drawing.Point(44, 145);
+            this.Nome.Name = "Nome";
+            this.Nome.Size = new System.Drawing.Size(38, 13);
+            this.Nome.TabIndex = 9;
+            this.Nome.Text = "Nome:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(44, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Valor:";
+            // 
             // ManterLanches
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 396);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Nome);
+            this.Controls.Add(this.Codigo);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.tbValor);
@@ -99,5 +132,8 @@
         private System.Windows.Forms.TextBox tbValor;
         private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.TextBox tbId;
+        private System.Windows.Forms.Label Codigo;
+        private System.Windows.Forms.Label Nome;
+        private System.Windows.Forms.Label label1;
     }
 }

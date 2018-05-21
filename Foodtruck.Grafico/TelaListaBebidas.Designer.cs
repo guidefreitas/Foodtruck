@@ -48,6 +48,7 @@
             this.btAlterar.TabIndex = 5;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btRemover
             // 
@@ -102,11 +103,13 @@
             // 
             // Tamanho
             // 
+            this.Tamanho.DataPropertyName = "Tamanho";
             this.Tamanho.HeaderText = "Tamanho";
             this.Tamanho.Name = "Tamanho";
             // 
             // Valor
             // 
+            this.Valor.DataPropertyName = "Valor";
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
             // 

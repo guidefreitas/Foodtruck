@@ -51,6 +51,25 @@ namespace Foodtruck.Grafico
         {
             CarregarBebidas();
         }
+        private bool VerificarSelecao()
+        {
+            if (dgBebidas.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Selecione uma linha");
+                return false;
+            }
+            return true;
+        }
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            if (VerificarSelecao())
+            {
+                Bebida bebidaSelecionado = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
+                AbreTelaInclusaoAlteracao(bebidaSelecionado);
+            }
+        }
+
+
     }
 
 }
