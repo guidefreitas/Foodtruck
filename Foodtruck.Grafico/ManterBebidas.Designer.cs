@@ -34,32 +34,36 @@
             this.tbTamanho = new System.Windows.Forms.TextBox();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Nome = new System.Windows.Forms.Label();
+            this.Codigo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbId
             // 
-            this.tbId.Location = new System.Drawing.Point(55, 42);
+            this.tbId.Location = new System.Drawing.Point(80, 39);
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(100, 20);
             this.tbId.TabIndex = 0;
             // 
             // tbNome
             // 
-            this.tbNome.Location = new System.Drawing.Point(55, 78);
+            this.tbNome.Location = new System.Drawing.Point(80, 71);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(100, 20);
             this.tbNome.TabIndex = 0;
             // 
             // tbValor
             // 
-            this.tbValor.Location = new System.Drawing.Point(55, 104);
+            this.tbValor.Location = new System.Drawing.Point(80, 105);
             this.tbValor.Name = "tbValor";
             this.tbValor.Size = new System.Drawing.Size(100, 20);
             this.tbValor.TabIndex = 0;
             // 
             // tbTamanho
             // 
-            this.tbTamanho.Location = new System.Drawing.Point(55, 142);
+            this.tbTamanho.Location = new System.Drawing.Point(80, 141);
             this.tbTamanho.Name = "tbTamanho";
             this.tbTamanho.Size = new System.Drawing.Size(100, 20);
             this.tbTamanho.TabIndex = 0;
@@ -83,11 +87,51 @@
             this.btCancelar.Text = "button1";
             this.btCancelar.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Valor:";
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSize = true;
+            this.Nome.Location = new System.Drawing.Point(12, 71);
+            this.Nome.Name = "Nome";
+            this.Nome.Size = new System.Drawing.Size(38, 13);
+            this.Nome.TabIndex = 11;
+            this.Nome.Text = "Nome:";
+            // 
+            // Codigo
+            // 
+            this.Codigo.AutoSize = true;
+            this.Codigo.Location = new System.Drawing.Point(12, 42);
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Size = new System.Drawing.Size(43, 13);
+            this.Codigo.TabIndex = 10;
+            this.Codigo.Text = "Codigo:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 144);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Tamanho:";
+            // 
             // ManterBebidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Nome);
+            this.Controls.Add(this.Codigo);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.tbTamanho);
@@ -97,6 +141,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManterBebidas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Shown += new System.EventHandler(this.ManterBebidas_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +155,9 @@
         private System.Windows.Forms.TextBox tbTamanho;
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Nome;
+        private System.Windows.Forms.Label Codigo;
+        private System.Windows.Forms.Label label2;
     }
 }
