@@ -124,5 +124,10 @@ namespace Foodtruck.Grafico
             tela.MdiParent = this;
             tela.Show();
         }
+
+        private void TelaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
