@@ -82,34 +82,34 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // pedidosToolStripMenuItem
             // 
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
             // 
             // novoPedidoToolStripMenuItem
             // 
             this.novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
-            this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoPedidoToolStripMenuItem.Text = "Novo Pedido";
             this.novoPedidoToolStripMenuItem.Click += new System.EventHandler(this.novoPedidoToolStripMenuItem_Click);
             // 
             // bebidasToolStripMenuItem
             // 
             this.bebidasToolStripMenuItem.Name = "bebidasToolStripMenuItem";
-            this.bebidasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bebidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bebidasToolStripMenuItem.Text = "Bebidas";
             this.bebidasToolStripMenuItem.Click += new System.EventHandler(this.bebidasToolStripMenuItem_Click);
             // 
             // lanchesToolStripMenuItem
             // 
             this.lanchesToolStripMenuItem.Name = "lanchesToolStripMenuItem";
-            this.lanchesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lanchesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lanchesToolStripMenuItem.Text = "Lanches";
             // 
             // windowsMenu
@@ -219,6 +219,7 @@
             this.Name = "TelaPrincipal";
             this.Text = "TelaPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
