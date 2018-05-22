@@ -73,6 +73,7 @@ namespace Foodtruck.Grafico
         {
             if (VerificarSelecao())
             {
+                
                 DialogResult resultado = MessageBox.Show("Tem certeza?", "Quer remover?", MessageBoxButtons.OKCancel);
                 if (resultado == DialogResult.OK)
                 {

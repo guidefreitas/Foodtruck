@@ -120,10 +120,30 @@ namespace Foodtruck.Negocio
         {
             Validacao validacao = new Validacao();
             Bebida bebidaBanco = BuscaBebidaPorId(bebidaAlterada.Id);
-            bebidaBanco.Nome = bebidaAlterada.Nome;
-            bebidaBanco.Tamanho = bebidaAlterada.Tamanho;
-            bebidaBanco.Valor = bebidaAlterada.Valor;
-            this.banco.SaveChanges();
+
+            if (string.IsNullOrEmpty(bebidaAlterada.Nome))
+            {
+                validacao.Mensagens.Add("nome", "O nome não pode ser nulo ou vazio");
+            }
+
+            if (string.IsNullOrEmpty(Convert.ToString(bebidaAlterada.Tamanho)))
+            {
+                validacao.Mensagens.Add("tamanho", "O campo tamanho não pode ser nulo ou vazio");
+            }
+
+            if (string.IsNullOrEmpty(Convert.ToString(bebidaAlterada.Valor)))
+            {
+                validacao.Mensagens.Add("valor", "O campo valor não pode ser nulo ou vazio");
+            }
+
+            if (validacao.Valido)
+            {
+                bebidaBanco.Nome = bebidaAlterada.Nome;
+                bebidaBanco.Tamanho = bebidaAlterada.Tamanho;
+                bebidaBanco.Valor = bebidaAlterada.Valor;
+                this.banco.Bebidas.Add(bebidaAlterada);
+                this.banco.SaveChanges();
+            }
             return validacao;
         }
         public Validacao CadastraBebida(Bebida bebidaCadastrada)

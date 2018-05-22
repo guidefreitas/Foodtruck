@@ -34,8 +34,8 @@
             this.dgBebidas = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tamanho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tamanho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgBebidas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +74,8 @@
             // 
             // dgBebidas
             // 
+            this.dgBebidas.AllowUserToAddRows = false;
+            this.dgBebidas.AllowUserToDeleteRows = false;
             this.dgBebidas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -81,11 +83,12 @@
             this.dgBebidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Nome,
-            this.Tamanho,
-            this.Valor});
+            this.Valor,
+            this.Tamanho});
             this.dgBebidas.Location = new System.Drawing.Point(5, 84);
             this.dgBebidas.Margin = new System.Windows.Forms.Padding(2);
             this.dgBebidas.Name = "dgBebidas";
+            this.dgBebidas.ReadOnly = true;
             this.dgBebidas.RowTemplate.Height = 33;
             this.dgBebidas.Size = new System.Drawing.Size(784, 283);
             this.dgBebidas.TabIndex = 6;
@@ -102,17 +105,17 @@
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             // 
-            // Tamanho
-            // 
-            this.Tamanho.DataPropertyName = "Tamanho";
-            this.Tamanho.HeaderText = "Tamanho";
-            this.Tamanho.Name = "Tamanho";
-            // 
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
+            // 
+            // Tamanho
+            // 
+            this.Tamanho.DataPropertyName = "Tamanho";
+            this.Tamanho.HeaderText = "Tamanho";
+            this.Tamanho.Name = "Tamanho";
             // 
             // TelaListaBebidas
             // 
@@ -140,7 +143,7 @@
         private System.Windows.Forms.DataGridView dgBebidas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tamanho;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tamanho;
     }
 }

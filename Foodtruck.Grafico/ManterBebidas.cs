@@ -94,6 +94,11 @@ namespace Foodtruck.Grafico
 
             }
         }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 
