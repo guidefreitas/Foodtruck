@@ -69,7 +69,27 @@ namespace Foodtruck.Grafico
             }
         }
 
-
+        private void btRemover_Click(object sender, EventArgs e)
+        {
+            if (VerificarSelecao())
+            {
+                DialogResult resultado = MessageBox.Show("Tem certeza?", "Quer remover?", MessageBoxButtons.OKCancel);
+                if (resultado == DialogResult.OK)
+                {
+                    Bebida bebidaSelecionada = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
+                    var validacao = Program.Gerenciador.RemoverBebida(bebidaSelecionada);
+                    if (validacao.Valido)
+                    {
+                        MessageBox.Show("Bebida removida com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um problema ao remover o cliente");
+                    }
+                    CarregarBebidas();
+                }
+            }
+        }
     }
 
 }

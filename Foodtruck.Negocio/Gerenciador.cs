@@ -20,7 +20,13 @@ namespace Foodtruck.Negocio
             banco.SaveChanges();
             return validacao;
         }
-
+        public Validacao RemoverBebida(Bebida bebida)
+        {
+            Validacao validacao = new Validacao();
+            banco.Bebidas.Remove(bebida);
+            banco.SaveChanges();
+            return validacao;
+        }
         public Validacao AlterarCliente(Cliente clienteAlterado)
         {
 
