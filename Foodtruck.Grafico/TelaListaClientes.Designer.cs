@@ -41,7 +41,7 @@
             // btAdicionar
             // 
             this.btAdicionar.Location = new System.Drawing.Point(6, 14);
-            this.btAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.btAdicionar.Name = "btAdicionar";
             this.btAdicionar.Size = new System.Drawing.Size(80, 34);
             this.btAdicionar.TabIndex = 0;
@@ -52,7 +52,7 @@
             // btRemover
             // 
             this.btRemover.Location = new System.Drawing.Point(90, 14);
-            this.btRemover.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btRemover.Margin = new System.Windows.Forms.Padding(2);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(84, 34);
             this.btRemover.TabIndex = 1;
@@ -63,7 +63,7 @@
             // btAlterar
             // 
             this.btAlterar.Location = new System.Drawing.Point(177, 14);
-            this.btAlterar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.btAlterar.Name = "btAlterar";
             this.btAlterar.Size = new System.Drawing.Size(72, 34);
             this.btAlterar.TabIndex = 2;
@@ -73,6 +73,8 @@
             // 
             // dgClientes
             // 
+            this.dgClientes.AllowUserToAddRows = false;
+            this.dgClientes.AllowUserToDeleteRows = false;
             this.dgClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -82,8 +84,9 @@
             this.Nome,
             this.Email});
             this.dgClientes.Location = new System.Drawing.Point(6, 70);
-            this.dgClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgClientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgClientes.Name = "dgClientes";
+            this.dgClientes.ReadOnly = true;
             this.dgClientes.RowTemplate.Height = 33;
             this.dgClientes.Size = new System.Drawing.Size(550, 283);
             this.dgClientes.TabIndex = 3;
@@ -93,18 +96,21 @@
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Codigo";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // Nome
             // 
             this.Nome.DataPropertyName = "Nome";
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             // 
             // Email
             // 
             this.Email.DataPropertyName = "Email";
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // TelaListaClientes
             // 
@@ -115,7 +121,7 @@
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btRemover);
             this.Controls.Add(this.btAdicionar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TelaListaClientes";
             this.Text = "TelaListaClientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
