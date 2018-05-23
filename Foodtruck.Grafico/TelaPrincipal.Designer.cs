@@ -111,6 +111,7 @@
             this.lanchesToolStripMenuItem.Name = "lanchesToolStripMenuItem";
             this.lanchesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lanchesToolStripMenuItem.Text = "Lanches";
+            this.lanchesToolStripMenuItem.Click += new System.EventHandler(this.lanchesToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 

@@ -85,7 +85,7 @@ namespace Foodtruck.Grafico
                     }
                     else
                     {
-                        MessageBox.Show("Ocorreu um problema ao remover o cliente");
+                        MessageBox.Show("Ocorreu um problema ao remover a Bebida");
                     }
                     CarregarBebidas();
                 }
