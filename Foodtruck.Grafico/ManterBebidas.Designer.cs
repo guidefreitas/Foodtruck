@@ -42,6 +42,7 @@
             // 
             // tbId
             // 
+            this.tbId.Enabled = false;
             this.tbId.Location = new System.Drawing.Point(80, 39);
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(100, 20);
