@@ -39,8 +39,8 @@ namespace Foodtruck.Grafico
             {
                 validacao = Program.Gerenciador.AlterarBebida(bebida);
             }
-
-            if (!validacao.Valido)
+            //qualquer coisa
+            if  (!validacao.Valido)
             {
                 String mensagemValidacao = "";
                 foreach (var chave in validacao.Mensagens.Keys)
