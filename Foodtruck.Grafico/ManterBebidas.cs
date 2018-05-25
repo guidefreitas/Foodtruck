@@ -12,43 +12,46 @@ using System.Windows.Forms;
 
 namespace Foodtruck.Grafico
 {
-    public partial class ManterCliente : Form
+    public partial class ManterBebidas : Form
     {
-        public Cliente ClienteSelecionado { get; set; }
+        public Bebida BebidaSelecionada { get; set; }
 
-        public ManterCliente()
+        public ManterBebidas()
         {
             InitializeComponent();
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
+            Bebida Bebida = new Bebida();
             long value = 0;
-            if (Int64.TryParse(tbId.Text , out value))
+            if (Int64.TryParse(tbId.Text, out value))
             {
-                cliente.Id = value;
+                Bebida.Id = value;
             }
             else
             {
-                cliente.Id = -1;
+                Bebida.Id = -1;
                 //passa indentificador com valor negativo se não conseguir converter
             }
-            cliente.CPF = tbCpf.Text;
-            cliente.Nome = tbNome.Text;
-            cliente.Email = tbEmail.Text;
-
+            Bebida.Id = Convert.ToInt64(tbId.Text);
+            Bebida.Nome = tbNome.Text;
+            Bebida.Valor = Convert.ToDecimal(tbValor.Text);
+            Bebida.Tamanho = Convert.ToSingle(tbTamanho.Text);
             Validacao validacao;
-            if (ClienteSelecionado == null)
+            if (BebidaSelecionada == null)
             {
-                validacao = Program.Gerenciador.AdicionarCliente(cliente);
+                validacao = Program.Gerenciador.CadastraBebida(Bebida);
             }
             else
             {
-                validacao = Program.Gerenciador.AlterarCliente(cliente);
+                validacao = Program.Gerenciador.AlterarBebida(Bebida);
             }
-            
-
             
             if (!validacao.Valido)
             {
@@ -63,9 +66,8 @@ namespace Foodtruck.Grafico
             }
             else
             {
-                MessageBox.Show("Cliente salvo com sucesso");
+                MessageBox.Show("Bebida salva com sucesso");
             }
-
             this.Close();
         }
 
@@ -74,14 +76,14 @@ namespace Foodtruck.Grafico
             this.Close();
         }
 
-        private void ManterCliente_Shown(object sender, EventArgs e)
+        private void ManterBebidas_Shown(object sender, EventArgs e)
         {
-            if(ClienteSelecionado != null)
+            if(BebidaSelecionada != null)
             {
-                this.tbId.Text = ClienteSelecionado.Id.ToString();
-                this.tbNome.Text = ClienteSelecionado.Nome;
-                this.tbCpf.Text = ClienteSelecionado.CPF;
-                this.tbEmail.Text = ClienteSelecionado.Email;
+                this.tbId.Text = BebidaSelecionada.Id.ToString();
+                this.tbNome.Text = BebidaSelecionada.Nome;
+                this.tbTamanho.Text = BebidaSelecionada.Tamanho.ToString();
+                this.tbValor.Text = BebidaSelecionada.Valor.ToString();
             }
         }
     }
