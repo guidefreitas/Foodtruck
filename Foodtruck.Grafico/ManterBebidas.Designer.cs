@@ -53,28 +53,28 @@
             this.tbNome.Location = new System.Drawing.Point(80, 71);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(100, 20);
-            this.tbNome.TabIndex = 0;
+            this.tbNome.TabIndex = 1;
             // 
             // tbValor
             // 
             this.tbValor.Location = new System.Drawing.Point(80, 105);
             this.tbValor.Name = "tbValor";
             this.tbValor.Size = new System.Drawing.Size(100, 20);
-            this.tbValor.TabIndex = 0;
+            this.tbValor.TabIndex = 2;
             // 
             // tbTamanho
             // 
             this.tbTamanho.Location = new System.Drawing.Point(80, 141);
             this.tbTamanho.Name = "tbTamanho";
             this.tbTamanho.Size = new System.Drawing.Size(100, 20);
-            this.tbTamanho.TabIndex = 0;
+            this.tbTamanho.TabIndex = 3;
             // 
             // btSalvar
             // 
             this.btSalvar.Location = new System.Drawing.Point(183, 203);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btSalvar.TabIndex = 1;
+            this.btSalvar.TabIndex = 4;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
@@ -84,7 +84,7 @@
             this.btCancelar.Location = new System.Drawing.Point(80, 203);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btCancelar.TabIndex = 1;
+            this.btCancelar.TabIndex = 5;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);

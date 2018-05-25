@@ -74,6 +74,7 @@
             // 
             // tbId
             // 
+            this.tbId.Enabled = false;
             this.tbId.Location = new System.Drawing.Point(128, 51);
             this.tbId.Name = "tbId";
             this.tbId.ShortcutsEnabled = false;

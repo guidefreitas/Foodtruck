@@ -58,7 +58,10 @@ namespace Foodtruck.Grafico
                 MessageBox.Show("Selecione uma linha");
                 return false;
             }
-            return true;
+            else
+            {
+                return true;
+            }
         }
         private void btAlterar_Click(object sender, EventArgs e)
         {
