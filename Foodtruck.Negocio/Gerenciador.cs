@@ -173,7 +173,7 @@ namespace Foodtruck.Negocio
                 validacao.Mensagens.Add("tamanho", "O campo tamanho não pode ser nulo ou vazio");
             }
 
-            if (this.banco.Bebidas.Where(b => b.Tamanho == bebidaCadastrada.Tamanho).Any() && validacao.Mensagens.Count == 0)
+            if (this.banco.Bebidas.Where(b => b.Tamanho == bebidaCadastrada.Tamanho).Any() && validacao.Mensagens.Count == 0 && bebidaCadastrada.Tamanho >= 0)
             {
                 validacao.Mensagens.Add("tamanho", "O campo tamanho deve ser constituido de apenas números positivos");
             }
@@ -183,7 +183,7 @@ namespace Foodtruck.Negocio
                 validacao.Mensagens.Add("valor", "O campo valor não pode ser nulo ou vazio");
             }
 
-            if (this.banco.Bebidas.Where(b => b.Valor == bebidaCadastrada.Valor).Any() && validacao.Mensagens.Count == 0)
+            if (this.banco.Bebidas.Where(b => b.Valor == bebidaCadastrada.Valor).Any() && validacao.Mensagens.Count == 0 && bebidaCadastrada.Tamanho >= 0)
             {
                 validacao.Mensagens.Add("valor", "O campo tamanho deve ser constituido de apenas números positivos");
             }
