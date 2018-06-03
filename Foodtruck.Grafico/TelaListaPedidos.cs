@@ -32,10 +32,13 @@ namespace Foodtruck.Grafico
             dgPedidos.DataSource = pedido;
 
         }
-
+        private void Tela_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CarregarPedidos();
+        }
         private void AbreTelaInclusaoAlteracao(Pedido pedidoSelecionado)
         {
-            ManterBebidas tela = new ManterBebidas();
+            AdicionaPedido tela = new AdicionaPedido();
             tela.MdiParent = this.MdiParent;
             tela.PedidoSelecionado = pedidoSelecionado;
             tela.FormClosed += Tela_FormClosed;
@@ -60,24 +63,24 @@ namespace Foodtruck.Grafico
                 DialogResult resultado = MessageBox.Show("Tem certeza?", "Quer remover?", MessageBoxButtons.OKCancel);
                 if (resultado == DialogResult.OK)
                 {
-                    Bebida bebidaSelecionada = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
-                    var validacao = Program.Gerenciador.RemoverBebida(bebidaSelecionada);
+                    Pedido pedidoSelecionado = (Pedido)dgPedidos.SelectedRows[0].DataBoundItem;
+                    var validacao = Program.Gerenciador.RemoverPedido(pedidoSelecionado);
                     if (validacao.Valido)
                     {
-                        MessageBox.Show("Bebida removida com sucesso");
+                        MessageBox.Show("Pedido removido com sucesso");
                     }
                     else
                     {
-                        MessageBox.Show("Ocorreu um problema ao remover a Bebida");
+                        MessageBox.Show("Ocorreu um problema ao remover o Pedido");
                     }
-                    CarregarBebidas();
+                    CarregarPedidos();
                 }
             }
         }
 
         private bool VerificarSelecao()
         {
-            if (dgBebidas.SelectedRows.Count <= 0)
+            if (dgPedidos.SelectedRows.Count <= 0)
             {
                 MessageBox.Show("Selecione uma linha");
                 return false;
