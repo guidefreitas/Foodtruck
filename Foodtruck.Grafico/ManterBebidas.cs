@@ -24,15 +24,6 @@ namespace Foodtruck.Grafico
         private void btSalvar_Click(object sender, EventArgs e)
         {
             Bebida bebida = new Bebida();
-            if (Int64.TryParse(tbId.Text, out long longConvertido))
-            {
-                bebida.Id = longConvertido;
-            }
-            else
-            {
-                bebida.Id = -1;
-                //passa indentificador com valor negativo se não conseguir converter
-            }
             if(float.TryParse(tbTamanho.Text, out float floatConvertido))
             {
                 bebida.Tamanho = floatConvertido;
