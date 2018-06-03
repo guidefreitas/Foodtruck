@@ -15,7 +15,7 @@ namespace Foodtruck.Grafico
     public partial class AdicionaPedido : Form
     {
         Pedido pedido = new Pedido();
-
+        public Pedido PedidoSelecionado { get; set; }
         public AdicionaPedido()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace Foodtruck.Grafico
 
         private void CarregaTotal()
         {
-            lbTotal.Text = pedido.ValorTotal().ToString();
+            lbTotal.Text = pedido.ValorTotal.ToString();
         }
 
         private void CarregaComboBoxes()
@@ -52,7 +52,7 @@ namespace Foodtruck.Grafico
         {
             dgBebidas.AutoGenerateColumns = false;
             dgBebidas.DataSource = pedido.Bebidas.ToList();
-            
+
             dgLanches.AutoGenerateColumns = false;
             dgLanches.DataSource = pedido.Lanches.ToList();
 
@@ -93,11 +93,64 @@ namespace Foodtruck.Grafico
                     }
                     MessageBox.Show(msg, "Erro");
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro grave, fale com o administrador");
             }
-            
+
+        }
+        private bool VerificarSelecaoBebidas()
+        {
+            if (dgBebidas.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Selecione uma linha");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private bool VerificarSelecaoLanches()
+        {
+            if (dgLanches.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Selecione uma linha");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private void btRemoverBebida_Click(object sender, EventArgs e)
+        {
+            if (VerificarSelecaoBebidas())
+            {
+                Bebida bebidaSelecionada = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
+                bebidaSelecionada = cbBebidas.SelectedItem as Bebida;
+                pedido.Bebidas.Remove(bebidaSelecionada);
+                CarregaDatagrids();
+            }
+
+
+        }
+
+        private void btRemoverLanche_Click(object sender, EventArgs e)
+        {
+            {
+                if (VerificarSelecaoLanches())
+                {
+                    Lanche lancheSelecionado = (Lanche)dgLanches.SelectedRows[0].DataBoundItem;
+                    lancheSelecionado = cbLanches.SelectedItem as Lanche;
+                    pedido.Lanches.Remove(lancheSelecionado);
+                    CarregaDatagrids();
+                }
+            }
         }
     }
 }
+
+
+

@@ -17,6 +17,17 @@ namespace Foodtruck.Negocio.Models
         public virtual Cliente Cliente { get; set; }
         public virtual ICollection<Lanche> Lanches { get; set; }
         public virtual ICollection<Bebida> Bebidas { get; set; }
+        public String NomeCliente
+        {
+            get
+            {
+                if (this.Cliente != null)
+                {
+                    return this.Cliente.Nome;
+                }
+                return "";
+            }
+        }
 
         public Pedido()
         {
@@ -25,11 +36,16 @@ namespace Foodtruck.Negocio.Models
             this.Bebidas = new List<Bebida>();
         }
 
-        public Decimal ValorTotal()
+        [NotMapped]
+        public Decimal ValorTotal
         {
-            Decimal totalLanches = this.Lanches.Sum(m => m.Valor);
-            Decimal totalBebidas = this.Bebidas.Sum(m => m.Valor);
-            return totalLanches + totalBebidas;
+            get
+            {
+                Decimal totalLanches = this.Lanches.Sum(m => m.Valor);
+                Decimal totalBebidas = this.Bebidas.Sum(m => m.Valor);
+                return totalLanches + totalBebidas;
+            }
+            
         }
         
     }
